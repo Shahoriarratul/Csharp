@@ -43,7 +43,7 @@ while ( k < s &&  l < s)
     l++;
 
 }
-Console.WriteLine("Left cross sum " + crossSum);
+Console.WriteLine("Left to right cross sum " + crossSum);
 
  k = 0;
  l = s-1; ;
@@ -57,7 +57,7 @@ while (k < s && l >= 0)
  
 
 }
-Console.WriteLine("Right cross sum " + crossSum2);
+Console.WriteLine("Right to left cross sum " + crossSum2);
 
 
 
