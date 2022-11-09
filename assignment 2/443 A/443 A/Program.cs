@@ -1,24 +1,19 @@
 ﻿String str = Console.ReadLine();
-char[] spearator = { '{',',','}'};
+char[] spearator = {'{',',','}'};
 String[] strlist = str.Split(spearator);
+Array.Sort(strlist);
+
 int cnt = 0;
 
-for (int i = 1; i <(strlist.Length-1); i++)
+for (int i = 0; i < (strlist.Length-1); i++)
 {
-    cnt++;
-    for (int j = 1; j <(strlist.Length - 1); j++)
+    if (strlist[i] != strlist[i + 1])
     {
-        if (i!=j && strlist[i] == strlist[j])
-        {
-
-           
-        }
-        else
-        {
-            cnt++;
-        }
-       
+        cnt++;
     }
-    Console.WriteLine(cnt);
+ 
+
+
 }
 Console.WriteLine(cnt);
+
