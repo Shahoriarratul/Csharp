@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task8
 {
-    public class VIPMember : Member
+    internal class VIPMember : Member
     {
         public void ChangeExpirationDate(DateTime date)
         {

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Task8
 {
-    public class Member
+    internal class Member
     {
-        public string membershipId;
-        public string Name { get; set; }
-        public DateTime MembershipExpirationDate { get; set; }
+        private string membershipId;
+        private string Name { get; set; }
+        private DateTime MembershipExpirationDate { get; set; }
 
-        public Member()
+       internal Member()
         {
             membershipId = Guid.NewGuid().ToString();
         }

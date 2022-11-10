@@ -13,15 +13,15 @@ namespace Task9
 
         public ShoppingCart(int size)
         {
-            Items = new CartItem[size];
+          var Items = new CartItem[size];
         }
 
         public double CalculateTotal()
         {
             double total = 0;
-            for(int i = 0; i < Items.Length; i++)
+            foreach(CartItem i in Items)
             {
-                total += Items[i].Price * Items[i].Quantity;
+                total += i.Price * i.Quantity;
             }
 
             return total;

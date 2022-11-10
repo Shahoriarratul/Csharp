@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task4
 {
-    public class Teacher
+    public class Teacher : Student
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -20,7 +20,7 @@ namespace Task4
             }
         }
 
-        public Teacher(string firstName, string lastName, string email)
+        public Teacher(string firstName, string lastName, string email):base(firstName, lastName, email)
         {
             FirstName = firstName;
             LastName = lastName;
