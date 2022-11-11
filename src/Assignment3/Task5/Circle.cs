@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    public class Circle
+    interface Circle
     {
-        public double Radius { get; private set; }
+        public double Radius { get; }
 
-        public Circle(double radius)
+        public void Circle()
         {
-            Radius = radius;
-        }
 
+        }
         public double CalculateArea()
         {
             return Math.PI * Radius * Radius;

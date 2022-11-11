@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Task5
 {
-    public class Square
+    interface Square
     {
-        public double Side { get; private set; }
+        public double Side { get;  }
 
-        public Square(double side)
+        public void Square()
         {
-            Side = side;
-        }
 
+        }
         public double CalculateArea()
         {
             return Side * Side;
