@@ -8,7 +8,7 @@ namespace Task1
 {
     public class OrderHistory
     {
-        (string name, int age)[] persons = new (string name, int age)[]
+        dynamic persons = new (string name, int age)[]
         {
             ("jalaluddin", 41),
             ("tareq", 33),
@@ -16,8 +16,7 @@ namespace Task1
             ("rashed", 21),
             ("monir", 45)
         };
-
-        (string name, double amount)[] orders = new (string name, double amount)[]
+        dynamic  orders = new (string name, double amount)[]
         {
             ("monir", 300.5),
             ("rashed", 20.5),

@@ -8,19 +8,28 @@ namespace Task3
 {
     public class StringHelper
     {
-        public string Append(string a, string b)
-        {
-            return a + b;
-        }
 
-        public string Append(string a, string b, string c)
-        {
-            return a + b + c;
-        }
 
         public string Append(string a, string b, string c, string d)
         {
-            return a + b + c + d;
+
+          
+
+            if( c == String.Empty && d == String.Empty)
+            {
+                return a + b;
+            }
+          
+            else if (d == String.Empty)
+            {
+                return a + b + c;
+            }
+            
+            else
+            {
+                return a + b + c + d;
+            }
+           
         }
     }
 }
