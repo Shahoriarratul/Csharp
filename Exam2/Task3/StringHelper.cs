@@ -10,24 +10,14 @@ namespace Task3
     {
 
 
-        public string Append(string a, string b, string c, string d)
+        public string Append(params string [] a)
         {
 
           
 
-            if( c == String.Empty && d == String.Empty)
+       foreach (string s in a)
             {
-                return a + b;
-            }
-          
-            else if (d == String.Empty)
-            {
-                return a + b + c;
-            }
-            
-            else
-            {
-                return a + b + c + d;
+             
             }
            
         }
