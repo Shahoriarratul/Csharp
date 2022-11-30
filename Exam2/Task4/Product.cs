@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task4
 {
-    public  class Product : methodes
+    public  class  Product : methodes
     {
         public string Name { get; set; }
         public string Description { get; set; }
