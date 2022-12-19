@@ -29,11 +29,21 @@ namespace Assignment4
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
         }
 
-         public DbSet<User> Users { get; set; }
-         public DbSet<Course> courses { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Course> Courses { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+
+        public DbSet<CourseRegistration> CourseRegistrations { get; set; }
+
+
+
+
 
 
     }

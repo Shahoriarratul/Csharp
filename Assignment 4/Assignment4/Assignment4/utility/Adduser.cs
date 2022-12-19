@@ -1,0 +1,61 @@
+﻿using Assignment4.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4.utility
+{
+    public class AddUser
+    {
+       public void plusUser(string type, TrainingDbContext context)
+        {
+            Console.Write("enter Name :");
+            string Name = Console.ReadLine();
+            Console.Write("enter username :");
+            string username = Console.ReadLine();
+            Console.Write("enter password :");
+            string password = Console.ReadLine();
+
+            User newUser = new User();
+            newUser.Name = Name;
+            newUser.UserName = username;
+            newUser.password = password;
+
+     
+
+
+            if (type == "Teacher")
+            {
+                newUser.userType = 1;
+
+                Teacher newT = new Teacher();
+                newT.Name = Name;
+                context.Add(newT);
+                Console.Write("Teacher added");
+
+            }
+               
+                    
+                    
+            else if (type == "Student")
+            {
+                newUser.userType = 2;
+                Student newS = new Student();
+                newS.Name = Name;
+                context.Add(newS);
+                Console.Write("Student added");
+
+            }
+               
+            context.Add(newUser);
+            context.SaveChanges();
+
+           
+
+
+
+        }
+    }
+}

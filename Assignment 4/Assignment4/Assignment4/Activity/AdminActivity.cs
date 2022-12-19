@@ -1,5 +1,6 @@
 ﻿using Assignment4.Entities;
 using Assignment4.Migrations;
+using Assignment4.utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,63 +27,46 @@ namespace Assignment4.Activity
             int input = Convert.ToInt32(Console.ReadLine());
 
             if (input == 1)
-                PlusUser("Teacher",
-            context);
-            if (input == 2)
-                PlusUser("Student",
-            context);
-            if (input == 3)
-                PlusCourse(context);
+            {
+                AddUser addTeacher = new AddUser();
+                addTeacher.plusUser("Teacher", context);
 
+            }
+             
 
+           else if (input == 2)
+            {
+                AddUser addStudent = new AddUser();
+                addStudent.plusUser("Student", context);
 
+            }
+               
+            else if (input == 3)
+            {
+                AddCourse addCourse = new AddCourse();
+                addCourse.plusCourse(context);
+            }
+            else if (input == 4)
+            {
+                Registration TRegistration = new Registration();
+                TRegistration.plusReg("Teacher", context);
+            }
 
-
-
-
-        }
-        public void PlusUser(string type, TrainingDbContext context)
-        {
-            Console.Write("enter Name :");
-            string Name = Console.ReadLine();
-            Console.Write("enter username :");
-            string username = Console.ReadLine();
-            Console.Write("enter password :");
-            string password = Console.ReadLine();
-          
-            User newUser = new User();
-            newUser.Name = Name;
-            newUser.UserName = username;
-            newUser.password = password;
-
-            if (type == "Teacher")
-                newUser.userType = 1;
-            else if (type == "Student")
-                newUser.userType= 2;
-            context.Add(newUser);
-            context.SaveChanges();
-
-            Console.Write("user added");
-
-
-
-        }
-        public void PlusCourse(TrainingDbContext context)
-        {
-            Console.Write("enter Course Name");
-            string CourseName = Console.ReadLine();
-            Console.Write("enter Course Fees");
-            int Fees = Convert.ToInt32(Console.ReadLine());
-
-            Course newCourse = new Course();
-            newCourse.CourseName = CourseName;
-            newCourse.fees = Fees;
-            context.Add(newCourse);
-            context.SaveChanges();
-            Console.Write("Course added");
+            else if (input == 5)
+            {
+                Registration SRegistration = new Registration();
+                SRegistration.plusReg("Student",context);
+            }
+            else
+            {
+                Console.WriteLine("please enter number between 1-5");
+               
+               
+            }
 
 
         }
+
 
     }
 }

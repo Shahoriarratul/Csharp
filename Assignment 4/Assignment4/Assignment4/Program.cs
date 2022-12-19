@@ -1,6 +1,7 @@
 ﻿using Assignment4;
 using Assignment4.Activity;
 using Assignment4.Entities;
+using Assignment4.utility;
 
 TrainingDbContext context = new TrainingDbContext();
 Console.WriteLine("welcome to attendence system");
@@ -31,14 +32,11 @@ if(U1 != null)
             StudentActivity studentActivity = new StudentActivity();
         }
 
-
-
     }
     else
     {
         Console.WriteLine("wrong password try again");
     }
-
 
 }
 else
