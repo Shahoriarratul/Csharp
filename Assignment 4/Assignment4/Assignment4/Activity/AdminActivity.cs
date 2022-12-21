@@ -1,5 +1,4 @@
 ﻿using Assignment4.Entities;
-using Assignment4.Migrations;
 using Assignment4.utility;
 using System;
 using System.Collections.Generic;
@@ -17,16 +16,26 @@ namespace Assignment4.Activity
 
             TrainingDbContext context = new TrainingDbContext();
 
-            Console.WriteLine("welcome admin");
+           
             Console.WriteLine("press 1 to add Teacher");
             Console.WriteLine("press 2 to add student");
             Console.WriteLine("press 3 to create courses ");
             Console.WriteLine("press 4 to assign a teacher in a course ");
             Console.WriteLine("press 5 assign students in a course ");
+            Console.WriteLine("press 6 set schedule a course ");
+            Console.WriteLine("press 0 to exit");
+
+          
 
             int input = Convert.ToInt32(Console.ReadLine());
 
-            if (input == 1)
+            if (input == 0)
+            {
+
+                Environment.Exit(0);
+            }
+
+            else if (input == 1)
             {
                 AddUser addTeacher = new AddUser();
                 addTeacher.plusUser("Teacher", context);
@@ -38,6 +47,7 @@ namespace Assignment4.Activity
             {
                 AddUser addStudent = new AddUser();
                 addStudent.plusUser("Student", context);
+               
 
             }
                
@@ -57,9 +67,14 @@ namespace Assignment4.Activity
                 Registration SRegistration = new Registration();
                 SRegistration.plusReg("Student",context);
             }
+            else if (input == 6)
+            {
+
+                
+            }
             else
             {
-                Console.WriteLine("please enter number between 1-5");
+                Console.WriteLine("please enter number between 0-6");
                
                
             }

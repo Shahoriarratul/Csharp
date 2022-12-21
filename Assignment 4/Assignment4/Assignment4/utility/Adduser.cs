@@ -1,4 +1,5 @@
-﻿using Assignment4.Entities;
+﻿using Assignment4.Activity;
+using Assignment4.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,10 @@ namespace Assignment4.utility
                 Teacher newT = new Teacher();
                 newT.Name = Name;
                 context.Add(newT);
-                Console.Write("Teacher added");
+                context.Add(newUser);
+                context.SaveChanges();
+                Console.Write("Teacher added \n");
+                AdminActivity adminActivity = new AdminActivity();
 
             }
                
@@ -45,12 +49,13 @@ namespace Assignment4.utility
                 Student newS = new Student();
                 newS.Name = Name;
                 context.Add(newS);
-                Console.Write("Student added");
-
+                context.Add(newUser);
+                context.SaveChanges();
+                Console.Write("Student added \n");
+                AdminActivity adminActivity = new AdminActivity();
             }
                
-            context.Add(newUser);
-            context.SaveChanges();
+      
 
            
 

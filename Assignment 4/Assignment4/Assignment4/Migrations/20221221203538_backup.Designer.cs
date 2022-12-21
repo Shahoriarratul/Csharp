@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment4.Migrations
 {
     [DbContext(typeof(TrainingDbContext))]
-    [Migration("20221219184134_updateteacher")]
-    partial class updateteacher
+    [Migration("20221221203538_backup")]
+    partial class backup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,9 @@ namespace Assignment4.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TeacherID")
+                        .HasColumnType("int");
+
                     b.Property<int>("Totalclass")
                         .HasColumnType("int");
 
@@ -59,7 +62,22 @@ namespace Assignment4.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("courses");
+                    b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("Assignment4.Entities.CourseRegistration", b =>
+                {
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseId", "StudentId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("CourseRegistrations", (string)null);
                 });
 
             modelBuilder.Entity("Assignment4.Entities.Student", b =>
@@ -122,6 +140,35 @@ namespace Assignment4.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Assignment4.Entities.CourseRegistration", b =>
+                {
+                    b.HasOne("Assignment4.Entities.Course", "Course")
+                        .WithMany("CourseStudents")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment4.Entities.Student", "Student")
+                        .WithMany("StudentCourses")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Assignment4.Entities.Course", b =>
+                {
+                    b.Navigation("CourseStudents");
+                });
+
+            modelBuilder.Entity("Assignment4.Entities.Student", b =>
+                {
+                    b.Navigation("StudentCourses");
                 });
 #pragma warning restore 612, 618
         }

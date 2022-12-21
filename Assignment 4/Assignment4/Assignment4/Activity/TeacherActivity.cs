@@ -10,7 +10,7 @@ namespace Assignment4.Activity
     {
         public TeacherActivity()
         {
-            Console.WriteLine("welcome Teacher");
+            
 
         }
     }

@@ -21,14 +21,17 @@ if(U1 != null)
     {
         if(U1.userType==0)
         {
+            Console.WriteLine("\n welcome admin");
             AdminActivity adminActivity = new AdminActivity();
         }
         if (U1.userType == 1)
         {
+            Console.WriteLine("\n welcome Teacher");
             TeacherActivity teacherActivity = new TeacherActivity();
         }
         if (U1.userType == 2)
         {
+            Console.WriteLine("\n welcome Student");
             StudentActivity studentActivity = new StudentActivity();
         }
 

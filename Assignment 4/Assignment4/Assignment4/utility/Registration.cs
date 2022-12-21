@@ -1,4 +1,5 @@
-﻿using Assignment4.Entities;
+﻿using Assignment4.Activity;
+using Assignment4.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace Assignment4.utility
                     {
                         C1.TeacherID = T1.id;
                         context.SaveChanges();
+                        AdminActivity adminActivity = new AdminActivity();
                     }
                     else Console.WriteLine("course does not exist");
                    

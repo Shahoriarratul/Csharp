@@ -20,6 +20,8 @@ namespace Assignment4.Entities
 
         public int TeacherID { get; set; }
 
+        public List<CourseRegistration> CourseStudents { get; set; }
+
 
 
     }
