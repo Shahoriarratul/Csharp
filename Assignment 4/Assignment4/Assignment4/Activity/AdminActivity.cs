@@ -69,6 +69,8 @@ namespace Assignment4.Activity
             }
             else if (input == 6)
             {
+                AddSchedule addSchedule = new AddSchedule();
+                addSchedule.plusSchedule(context);
 
                 
             }

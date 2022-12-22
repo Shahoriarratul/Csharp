@@ -8,7 +8,7 @@ namespace Assignment4.utility
 {
     public class AddSchedule
     {
-        public void plusSchedule()
+        public void plusSchedule(TrainingDbContext context)
         {
             Console.Write("enter Course Name :");
             string CourseName = Console.ReadLine();

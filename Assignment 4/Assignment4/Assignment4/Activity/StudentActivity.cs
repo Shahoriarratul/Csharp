@@ -1,4 +1,6 @@
 ﻿using Assignment4.Entities;
+using Assignment4.Migrations;
+using Assignment4.utility;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,8 +30,14 @@ namespace Assignment4.Activity
                 Console.WriteLine($"{item.CourseId}.{course.CourseName}");
          
             }
+          
+           
+            plusAttendence attendence = new plusAttendence();
+            attendence.GiveAttendence(context);
 
-              
+
+
+
 
 
         }

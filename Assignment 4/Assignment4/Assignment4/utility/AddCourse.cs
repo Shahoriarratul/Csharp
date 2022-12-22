@@ -21,9 +21,11 @@ namespace Assignment4.utility
             newCourse.CourseName = CourseName;
             newCourse.fees = Fees;
             newCourse.FirstClssDay = "";
-            newCourse.LastClssDay = "";
+            newCourse.SecondClssDay = "";
+            newCourse.ThirdClssDay = "";
             newCourse.FirstClssTime = "";
-            newCourse.LastClassTime = "";
+            newCourse.SecondClassTime = "";
+            newCourse.ThirdClassTime = "";
             newCourse.Totalclass = 0;
             newCourse.TeacherID = 0; 
             context.Add(newCourse);

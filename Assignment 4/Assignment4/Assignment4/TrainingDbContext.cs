@@ -29,12 +29,18 @@ namespace Assignment4
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-         
+            modelBuilder.Entity<Attendence>().ToTable("Attendences");
+
             modelBuilder.Entity<CourseRegistration>().ToTable("CourseRegistrations");
 
-            //modelBuilder.Entity<CourseRegistration>().HasKey("CourseId", "StudentId");
+         
             modelBuilder.Entity<CourseRegistration>().HasKey((x) => new { x.CourseId, x.StudentId });
 
+
+            modelBuilder.Entity<Course>()
+                .HasMany(x => x.StudentAttendence)
+                .WithOne(y => y.Course)
+                .HasForeignKey(z => z.CourseID);
 
             modelBuilder.Entity<CourseRegistration>()
                 .HasOne(x => x.Course)
