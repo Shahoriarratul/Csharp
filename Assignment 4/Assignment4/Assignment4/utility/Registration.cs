@@ -60,6 +60,7 @@ namespace Assignment4.utility
                         Registration.CourseId = C1.Id;
                         context.Add(Registration);
                         context.SaveChanges();
+                        AdminActivity adminActivity = new AdminActivity();
                     }
                     else Console.WriteLine("There is no course by this name");
 

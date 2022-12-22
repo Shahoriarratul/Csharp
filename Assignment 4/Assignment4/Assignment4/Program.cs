@@ -26,13 +26,16 @@ if(U1 != null)
         }
         if (U1.userType == 1)
         {
-            Console.WriteLine("\n welcome Teacher");
-            TeacherActivity teacherActivity = new TeacherActivity();
+            Teacher T1 =context.Teachers.Where(x => x.Name == U1.Name).FirstOrDefault();
+
+            TeacherActivity teacherActivity = new TeacherActivity(T1.id);
         }
         if (U1.userType == 2)
         {
-            Console.WriteLine("\n welcome Student");
-            StudentActivity studentActivity = new StudentActivity();
+            Student S1 = context.Students.Where(x => x.Name == U1.Name).FirstOrDefault();
+
+       
+            StudentActivity studentActivity = new StudentActivity(S1.Id);
         }
 
     }
