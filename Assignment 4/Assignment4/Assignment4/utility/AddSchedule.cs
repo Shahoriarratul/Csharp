@@ -24,6 +24,12 @@ namespace Assignment4.utility
                 int ClassNumber = Convert.ToInt32(Console.ReadLine());
                 C1.Totalclass = ClassNumber;
 
+                Console.WriteLine("Class Starting Date Example: 01/11/2022");
+
+                string ClassStart = Console.ReadLine();
+                C1.ClssStartTime = ClassStart;
+
+
                 Console.WriteLine("How many classes every week (Maximum 3 classes)");
                 int i = Convert.ToInt32(Console.ReadLine());
 
@@ -84,7 +90,7 @@ namespace Assignment4.utility
                 }
 
                 context.SaveChanges();
-                Console.Write($"Schedule added for {C1.CourseName}");
+                Console.Write($"Schedule added for {C1.CourseName} \n");
                 AdminActivity adminActivity = new AdminActivity();
 
 

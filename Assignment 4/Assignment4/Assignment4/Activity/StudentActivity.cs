@@ -22,7 +22,7 @@ namespace Assignment4.Activity
               .FirstOrDefault();
 
             Console.WriteLine($"Welcome {student.Name}");
-            Console.WriteLine("Enrolled courses with CourseID");
+            Console.WriteLine("Enrolled courses with CourseID ");
             foreach (var item in student.StudentCourses)
             {
                 Course course = context.Courses.Where(x => x.Id == item.CourseId).FirstOrDefault();
@@ -33,7 +33,7 @@ namespace Assignment4.Activity
           
            
             plusAttendence attendence = new plusAttendence();
-            attendence.GiveAttendence(context);
+            attendence.GiveAttendence(student.Id, student.Name, context);
 
 
 

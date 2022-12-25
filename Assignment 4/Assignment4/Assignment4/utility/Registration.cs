@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -19,7 +20,9 @@ namespace Assignment4.utility
 
                 Console.Write("Enter Teacher Name :");
                 string TeacherName = Console.ReadLine();
-                Teacher T1 = context.Teachers.Where(x => x.Name == TeacherName).FirstOrDefault();
+                Console.Write("Enter Teacher ID :");
+                int TeacherId = Convert.ToInt32(Console.ReadLine());
+                Teacher T1 = context.Teachers.Where(x => x.Name == TeacherName &&  x.id == TeacherId).FirstOrDefault();
                 if(T1 != null)
                 {
                     Console.Write("Enter course Name :");
@@ -30,6 +33,7 @@ namespace Assignment4.utility
                     {
                         C1.TeacherID = T1.id;
                         context.SaveChanges();
+                        Console.Write("Teacher assinged");
                         AdminActivity adminActivity = new AdminActivity();
                     }
                     else Console.WriteLine("course does not exist");
@@ -46,7 +50,10 @@ namespace Assignment4.utility
 
                 Console.Write("Enter Student Name :");
                 string StudentName = Console.ReadLine();
-                Student S1 = context.Students.Where(x => x.Name == StudentName).FirstOrDefault();
+                Console.Write("Enter Student Id :");
+                int Sid =  Convert.ToInt32(Console.ReadLine());
+
+                Student S1 = context.Students.Where(x => x.Name == StudentName && x.Id == Sid).FirstOrDefault();
                 if (S1 != null)
                 {
                     Console.Write("Enter course Name :");
@@ -56,10 +63,12 @@ namespace Assignment4.utility
                     if (C1 != null)
                     {
                         CourseRegistration Registration = new CourseRegistration();
+
                         Registration.StudentId = S1.Id;
                         Registration.CourseId = C1.Id;
                         context.Add(Registration);
                         context.SaveChanges();
+                        Console.Write("Student assinged");
                         AdminActivity adminActivity = new AdminActivity();
                     }
                     else Console.WriteLine("There is no course by this name");

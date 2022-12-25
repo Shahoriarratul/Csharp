@@ -1,4 +1,5 @@
 ﻿using Assignment4.Entities;
+using Assignment4.utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace Assignment4.Activity
 
 
             List <Course> course = context.Courses.Where(x => x.TeacherID == id).ToList();
-            Course course2 = context.Courses.Where(x => x.TeacherID == id).FirstOrDefault();
+        
 
-            Teacher teacher = context.Teachers.Where(x => x.id == course2.TeacherID).FirstOrDefault();
+            Teacher teacher = context.Teachers.Where(x => x.id == id).FirstOrDefault();
             
             Console.WriteLine($"Welcome {teacher.Name}");
             
@@ -30,6 +31,19 @@ namespace Assignment4.Activity
                 Console.WriteLine($"{item.Id}.{item.CourseName}");
 
             }
+            Console.WriteLine("All courses with CourseID");
+            List<Course> courseList = context.Courses.ToList();
+
+            foreach (var item in courseList)
+            {
+
+
+                Console.WriteLine($"{item.Id}.{item.CourseName}");
+
+            }
+
+            Report report = new Report();
+            report.ShowReport(context);
 
 
 
