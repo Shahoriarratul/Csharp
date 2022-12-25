@@ -15,7 +15,6 @@ namespace Assignment4.Entities
         public string Date { get; set; }
 
         public int CourseID { get; set; }
-
         public Course Course { get; set; }
 
     }

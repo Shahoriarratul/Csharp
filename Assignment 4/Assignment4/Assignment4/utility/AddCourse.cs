@@ -27,7 +27,8 @@ namespace Assignment4.utility
             newCourse.SecondClassTime = "";
             newCourse.ThirdClassTime = "";
             newCourse.Totalclass = 0;
-            newCourse.TeacherID = 0; 
+            newCourse.TeacherID = 0;
+            newCourse.ClssStartTime = "";
             context.Add(newCourse);
             context.SaveChanges();
             Console.Write("Course added \n");

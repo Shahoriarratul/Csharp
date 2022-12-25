@@ -18,6 +18,7 @@ namespace Assignment4.Entities
         public string SecondClassTime { get; set; }
         public string ThirdClssDay { get; set; }
         public string ThirdClassTime { get; set; }
+        public string ClssStartTime { get; set; }
         public int Totalclass { get; set; }
 
         public int TeacherID { get; set; }
