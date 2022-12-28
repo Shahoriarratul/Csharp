@@ -33,6 +33,16 @@ namespace Assignment4.utility
                 Teacher T1 = context.Teachers.Where(x => x.Name == TeacherName &&  x.id == TeacherId).FirstOrDefault();
                 if (T1 != null)
                 {
+                    Console.WriteLine("Available cources ");
+                    List<Course> courseList = context.Courses.ToList();
+
+                    foreach (var item in courseList)
+                    {
+
+
+                        Console.WriteLine($"ID:{item.Id} Course Name:{item.CourseName}");
+
+                    }
                     Console.Write("Enter course Name :");
                     string CourseName = Console.ReadLine();
 
@@ -81,6 +91,16 @@ namespace Assignment4.utility
                 Student S1 = context.Students.Where(x => x.Name == StudentName && x.Id == Sid).FirstOrDefault();
                 if (S1 != null)
                 {
+                    Console.WriteLine("Available cources ");
+                    List<Course> courseList = context.Courses.ToList();
+
+                    foreach (var item in courseList)
+                    {
+
+
+                        Console.WriteLine($"ID:{item.Id} Course Name:{item.CourseName}");
+
+                    }
                     Console.Write("Enter course Name :");
                     string CourseName = Console.ReadLine();
 
