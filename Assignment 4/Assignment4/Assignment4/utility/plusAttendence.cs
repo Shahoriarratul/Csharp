@@ -15,7 +15,7 @@ namespace Assignment4.utility
         public void GiveAttendence(int Studentid, string Studentname ,TrainingDbContext context)
         {
             CultureInfo provider = CultureInfo.InvariantCulture;
-            Console.WriteLine("To give attendence type Id of your enrolled course and press 0 to exit ");
+            Console.WriteLine("\nTo give attendence type Id of your enrolled course and press 0 to Logout ");
             int CourseId = Convert.ToInt32(Console.ReadLine());
 
             if (CourseId != 0)
@@ -54,6 +54,7 @@ namespace Assignment4.utility
                             context.Add(attendence);
 
                             context.SaveChanges();
+                            Console.WriteLine(DateTime.Now);
                             Console.WriteLine("attendence taken \n");
 
                             StudentActivity studentActivity = new StudentActivity(Studentid);
@@ -61,6 +62,7 @@ namespace Assignment4.utility
                         }
                         else
                         {
+                            Console.WriteLine(DateTime.Now);
                             Console.WriteLine("class date and time dont match");
                             StudentActivity studentActivity = new StudentActivity(Studentid);
                         }
@@ -74,8 +76,8 @@ namespace Assignment4.utility
                         string[] str = s.Split(' ');
 
 
-                        DateTime start = DateTime.ParseExact((str[1] + str[2]), format1, provider);
-                        DateTime end = DateTime.ParseExact((str[4] + str[5]), format1, provider);
+                        DateTime start = DateTime.ParseExact(($"{str[0]} {str[1]}"), format1, provider);
+                        DateTime end = DateTime.ParseExact(($"{str[3]} {str[4]}"), format1, provider);
                         DateTime now = DateTime.Now;
 
                         if ((now > start) && (now < end))
@@ -90,11 +92,13 @@ namespace Assignment4.utility
                             context.Add(attendence);
 
                             context.SaveChanges();
+                            Console.WriteLine(DateTime.Now);
                             Console.WriteLine("attendence taken \n");
                             StudentActivity studentActivity = new StudentActivity(Studentid);
                         }
                         else
                         {
+                            Console.WriteLine(DateTime.Now);
                             Console.WriteLine("class date and time dont match");
                             StudentActivity studentActivity = new StudentActivity(Studentid);
                         }
@@ -106,9 +110,10 @@ namespace Assignment4.utility
                         string[] str = s.Split(' ');
 
 
-                        DateTime start = DateTime.ParseExact((str[1] + str[2]), format1, provider);
-                        DateTime end = DateTime.ParseExact((str[4] + str[5]), format1, provider);
+                        DateTime start = DateTime.ParseExact(($"{str[0]} {str[1]}"), format1, provider);
+                        DateTime end = DateTime.ParseExact(($"{str[3]} {str[4]}"), format1, provider);
                         DateTime now = DateTime.Now;
+                      
 
                         if ((now > start) && (now < end))
                         {
@@ -122,11 +127,13 @@ namespace Assignment4.utility
                             context.Add(attendence);
 
                             context.SaveChanges();
+                            Console.WriteLine(DateTime.Now);
                             Console.WriteLine("attendence taken \n");
                             StudentActivity studentActivity = new StudentActivity(Studentid);
                         }
                         else
                         {
+                            Console.WriteLine(DateTime.Now);
                             Console.WriteLine("class date and time dont match");
                             StudentActivity studentActivity = new StudentActivity(Studentid);
                         }
@@ -136,6 +143,7 @@ namespace Assignment4.utility
                     }
                     else
                     {
+                        Console.WriteLine(DateTime.Now);
                         Console.WriteLine("class date and time dont match");
                         StudentActivity studentActivity = new StudentActivity(Studentid);
                     }
@@ -155,7 +163,9 @@ namespace Assignment4.utility
             }
             else
             {
-                Environment.Exit(0);
+               
+                Home home = new Home();
+
             }
   
 

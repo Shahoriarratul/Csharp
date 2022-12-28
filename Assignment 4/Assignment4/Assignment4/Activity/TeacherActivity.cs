@@ -20,25 +20,25 @@ namespace Assignment4.Activity
 
             Teacher teacher = context.Teachers.Where(x => x.id == id).FirstOrDefault();
             
-            Console.WriteLine($"Welcome {teacher.Name}");
+            Console.WriteLine($"\nWelcome {teacher.Name}");
             
-            Console.WriteLine("Assigned courses with CourseID");
+            Console.WriteLine("\nAssigned courses with CourseID");
             
             foreach (var item in course)
             {
               
 
-                Console.WriteLine($"{item.Id}.{item.CourseName}");
+                Console.WriteLine($"ID:{item.Id} Course Name:{item.CourseName}");
 
             }
-            Console.WriteLine("All courses with CourseID");
+            Console.WriteLine("\nAll courses with CourseID");
             List<Course> courseList = context.Courses.ToList();
 
             foreach (var item in courseList)
             {
 
 
-                Console.WriteLine($"{item.Id}.{item.CourseName}");
+                Console.WriteLine($"ID:{item.Id} Course Name:{item.CourseName}");
 
             }
 

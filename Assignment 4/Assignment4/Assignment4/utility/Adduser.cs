@@ -12,11 +12,11 @@ namespace Assignment4.utility
     {
        public void plusUser(string type, TrainingDbContext context)
         {
-            Console.Write("enter Name :");
+            Console.Write("Enter Name :");
             string Name = Console.ReadLine();
-            Console.Write("enter username :");
+            Console.Write("Enter username :");
             string username = Console.ReadLine();
-            Console.Write("enter password :");
+            Console.Write("Enter password :");
             string password = Console.ReadLine();
 
             User newUser = new User();

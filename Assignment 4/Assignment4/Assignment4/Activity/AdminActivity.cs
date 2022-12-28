@@ -23,7 +23,7 @@ namespace Assignment4.Activity
             Console.WriteLine("press 4 to assign a teacher in a course ");
             Console.WriteLine("press 5 assign students in a course ");
             Console.WriteLine("press 6 set schedule a course ");
-            Console.WriteLine("press 0 to exit");
+            Console.WriteLine("press 0 to logout");
 
           
 
@@ -32,7 +32,9 @@ namespace Assignment4.Activity
             if (input == 0)
             {
 
-                Environment.Exit(0);
+                    Home home = new Home();
+
+
             }
 
             else if (input == 1)
@@ -76,6 +78,7 @@ namespace Assignment4.Activity
             }
             else
             {
+
                 Console.WriteLine("please enter number between 0-6");
                
                

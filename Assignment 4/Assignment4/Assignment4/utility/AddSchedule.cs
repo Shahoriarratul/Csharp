@@ -12,14 +12,21 @@ namespace Assignment4.utility
     {
         public void plusSchedule(TrainingDbContext context)
         {
-            Console.WriteLine("enter Course Name :");
+            Console.WriteLine("List of available courses");
+            List<Course> courses = context.Courses.ToList();
+            foreach (var c in courses)
+            {
+                Console.WriteLine($"ID:{c.Id} Name:{c.CourseName}");
+            }
+
+            Console.WriteLine("Enter Course Name :");
             string CourseName = Console.ReadLine();
 
             Course C1 = context.Courses.Where(c => c.CourseName == CourseName).FirstOrDefault();
 
             if (C1 != null)
             {
-                Console.WriteLine("Number off classes");
+                Console.WriteLine(" Number of classes");
 
                 int ClassNumber = Convert.ToInt32(Console.ReadLine());
                 C1.Totalclass = ClassNumber;

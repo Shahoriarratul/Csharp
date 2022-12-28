@@ -22,20 +22,29 @@ namespace Assignment4.Activity
               .FirstOrDefault();
 
             Console.WriteLine($"Welcome {student.Name}");
-            Console.WriteLine("Enrolled courses with CourseID ");
-            foreach (var item in student.StudentCourses)
+            Console.WriteLine("\nEnrolled courses with CourseID ");
+            if (student.StudentCourses.Count > 0)
             {
-                Course course = context.Courses.Where(x => x.Id == item.CourseId).FirstOrDefault();
-                
-                Console.WriteLine($"{item.CourseId}.{course.CourseName}");
-         
+
+
+                foreach (var item in student.StudentCourses)
+                {
+                    Course course = context.Courses.Where(x => x.Id == item.CourseId).FirstOrDefault();
+
+                    Console.WriteLine($"ID:{item.CourseId} Course Name:{course.CourseName}");
+
+                }
+
+
+                plusAttendence attendence = new plusAttendence();
+                attendence.GiveAttendence(student.Id, student.Name, context);
+
             }
-          
-           
-            plusAttendence attendence = new plusAttendence();
-            attendence.GiveAttendence(student.Id, student.Name, context);
-
-
+            else
+            {
+                Console.WriteLine("You are not enrolled in any courses");
+                Home home = new Home();
+            }
 
 
 
