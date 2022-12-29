@@ -42,7 +42,7 @@ namespace Assignment4.utility
                 string COM3 = C1.SecondClssDay;
                 string COM4 = C1.ThirdClssDay;
                 string space = " ";
-                Console.Write("{0,25}", space);
+                Console.Write("{0,30}", space);
                 while (i < C1.Totalclass)
                 {
                     COM1 = result1.ToString("dddd", provider);
@@ -59,7 +59,7 @@ namespace Assignment4.utility
                 {
                     Student student = context.Students.Where(x => x.Id == item.StudentId).FirstOrDefault();
 
-                    Console.Write("\n Name:{0,10} Id.{1,2} ", student.Name, item.StudentId);
+                    Console.Write("\n Name:{0,15} Id.{1,2} ", student.Name, item.StudentId);
 
 
                     foreach (string date in dates)
