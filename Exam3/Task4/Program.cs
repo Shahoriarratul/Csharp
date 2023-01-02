@@ -10,6 +10,7 @@ using FileStream stream = f.Open(FileMode.Open);
 
 for (int i = 0; i < f.Length; i++)
 {
-    int c = stream.ReadByte();
-    Console.WriteLine(((char)c));
+    char[] c = new char[8];
+    c = stream.ReadByte();
+    Console.WriteLine(c);
 }
